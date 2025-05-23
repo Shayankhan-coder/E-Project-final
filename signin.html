@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus SignIn</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="./Images/logo-png.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/signin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+
+<body>
+
+
+  <!-- Navbar -->
+
+
+
+  <header class="header">
+    <nav class="navbar">
+      <p class="logo "><img style="border-radius: 1500px; cursor: pointer;" src="./Images/logo-png.png" alt=""
+          width="70px" height="70px"><a style="color: white; font-size: 20px;" href="./index.html"><b> Nexus Aquarium</b>
+        </a></p>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" id="hamburger-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </label>
+      <ul class="links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About Us</a></li>
+        <li><a href="./event.html">Events</a></li>
+        <li><a href="./booking.html">Booking</a></li>
+        <li><a href="./feedback.html">Feedback</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+  
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a style="font-style: italic; font-weight: bolder; text-align: center;" class="dropdown-item text-black" href="./chart.html">Marine Life Chart</a></li>
+            <li><a style="font-style: italic; font-weight: bolder; text-align: center;" class="dropdown-item text-black" href="./pricing.html">Tickets</a></li>
+            <li><a style="font-style: italic; font-weight: bolder; text-align: center;"  class="dropdown-item text-black" href="./show.html">Dolphin Show</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a style="font-style: italic; font-weight: bolder; text-align: center;" class="dropdown-item text-black" href="./timing.html">Timing and Policy</a></li>
+          </ul>
+        </li>
+  
+        
+          <a style="font-size: 20px; font-weight: bolder; border: 1px solid grey; padding: 10px;" href="signin.html" class="signin">Sign In</a>
+          <a style="font-size: 20px; font-weight: bolder; border: 1px solid grey; padding: 10px;" href="signup.html" class="signup">Sign Up</a>
+      </ul>
+
+    </nav>
+  </header>
+
+  <br>
+  <br>
+
+
+
+
+  <!-- Signin -->
+
+
+  <div class="container">
+    <div class="left">
+      <div class="logo">
+        <img src="./Images/logo-png.png" alt="fish logo" />
+        Nexus Aquarium
+      </div>
+      <h2>Welcome Back</h2>
+
+      <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.com%3Fhl%3Den-GB&ec=GAlA8wE&hl=en-GB&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S1378698900%3A1746527392702885"
+        class="google-btn">
+        <img src="https://img.icons8.com/?size=48&id=17949&format=png" alt="Google logo"
+          style="width:20px; height:20px;">
+        Log in with Google
+      </a>
+      <div class="separator">OR LOGIN WITH EMAIL</div>
+
+      <form>
+        <input type="email" id="login-email" placeholder="Enter your email">
+        <input type="password" id="login-password" placeholder="Enter your password">
+        <div class="options">
+          <label><input type="checkbox" />Keep me logged in</label>
+          <a href="./contact.html">Forgot your password?</a>
+        </div>
+
+        <div class="button-wrapper">
+
+  <button type="submit" class="btn99">Log-in</button>
+         
+        </div>
+      </form>
+
+      <div class="signup">
+        Don't have an account? <a href="./signup.html">Sign up</a>
+      </div>
+    </div>
+
+    <div class="right">
+      <img class="illustration" src="https://cdn-icons-png.flaticon.com/512/2913/2913463.png" alt="aquarium" />
+      <div class="text">
+        Dive into a seamless aquatic experience with Nexus Aquarium. Your underwater world awaits.
+      </div>
+      <a href="./index.html"><button>Explore Aquarium</button></a>
+      
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <script>
+   document.querySelector(".btn99").addEventListener("click", function (e) {
+    e.preventDefault(); // prevent default form submission
+
+    let email = document.getElementById("login-email").value.trim();
+    let password = document.getElementById("login-password").value.trim();
+
+    let emailRule = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (email === "" || password === "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Please fill in both email and password.'
+        });
+        return;
+    }
+
+    if (!emailRule.test(email)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Email',
+            text: 'Enter a valid email address.'
+        });
+        return;
+    }
+
+    if (password.length < 6) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Wrong Password',
+            text: 'Password must be at least 6 characters.'
+        });
+        return;
+    }
+
+    // All validations passed
+    Swal.fire({
+        icon: 'success',
+        title: 'Sign-in Complete!',
+        text: 'Redirecting to homepage...',
+        timer: 2000,
+        showConfirmButton: false
+    }).then(() => {
+        window.location.href = "index.html"; // redirect to homepage
+    });
+});
+  </script>
+
+
+<!-- footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./booking.html">Booking</a></li>
+          <li><a href="./event.html">Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p>Email: info@nexusaquarium.com</p>
+        <p>Phone: +1 234 567 890</p>
+        <p>Address: 123 Nexus Aquarium, City</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a>
+          <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Nexus Aquarium. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+</html>

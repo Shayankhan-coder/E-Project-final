@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Booking</title>
+    <link rel="stylesheet" href="./css/booking.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./Images/logo-png.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./javascript/index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  
+
+  <!-- Home -->
+
+
+
+  <header class="header">
+    <nav class="navbar">
+      <p  class="logo "><img style="border-radius: 1500px; cursor: pointer;" src="./Images/logo-png.png" alt="" width="70px" height="70px"><a style="color: white; font-size: 20px;" href="./index.html"><b> Nexus Aquarium</b> </a></p>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" id="hamburger-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </label>
+      <ul class="links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About Us</a></li>
+        <li><a href="./event.html">Events</a></li>
+        <li><a href="./booking.html">Booking</a></li>
+        <li><a href="./feedback.html">Feedback</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+  
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a style="font-style: italic; font-weight: bolder; text-align: center;" class="dropdown-item text-black" href="./chart.html">Marine Life Chart</a></li>
+            <li><a style="font-style: italic; font-weight: bolder; text-align: center;" class="dropdown-item text-black" href="./pricing.html">Tickets</a></li>
+            <li><a style="font-style: italic; font-weight: bolder; text-align: center;"  class="dropdown-item text-black" href="./show.html">Dolphin Show</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a style="font-style: italic; font-weight: bolder; text-align: center;" class="dropdown-item text-black" href="./timing.html">Timing and Policy</a></li>
+          </ul>
+        </li>
+  
+        
+          <a style="font-size: 20px; font-weight: bolder; border: 1px solid grey; padding: 10px;" href="./signin.html" class="signin">Sign In</a>
+          <a style="font-size: 20px; font-weight: bolder; border: 1px solid grey; padding: 10px;" href="./signup.html" class="signup">Sign Up</a>
+      </ul>
+     
+    </nav>
+  </header>
+
+    
+
+
+
+
+    <!-- Booking -->
+
+
+    <section>
+      <br> <br>
+  
+      <h1 id="Booking"
+      class="text-center text-white">Online Event Booking:-</h1>
+  
+      <br>
+  
+      <div class="container">
+      
+  
+      
+  
+        <div class="mb-3 ">
+         
+          <label for="username" class="input-label text-white">Name</label>
+          <input type="text" id="username" class="mb-3 " placeholder=" Enter Your Name" required>
+    
+        </div>
+        <br>
+        <div class="mb-3">
+          <label for="email" class="input-label text-white">E-Mail</label>
+          <input type="email" id="email" class="mb-3" placeholder="Enter Your E-Mail" required>
+    
+        </div>
+        <br>
+    
+        <div class="mb-3">
+          <label for="country" class="form-label text-white">Select Country</label>
+          <select class="form-select" id="country" required>
+            <option value="">Choose...</option>
+            <option>Pakistan</option>
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+            <option>China</option>
+          </select>
+        </div>
+        
+      
+        <div class="mb-3">
+          <label for="event" class="form-label text-white">Select Event</label>
+          <select class="form-select" id="event" required>
+            <option value="">Choose...</option>
+            <option>Shark Awareness Week</option>
+            <option>Family Night at the Aquarium</option>
+            <option>Ocean Photography Contest</option>
+            <option>World Ocean Day Celebration</option>
+            <option>Summer Camp: Junior Marine Biologist</option>
+            <option>Kid's Marine Workshop</option>
+            <option>School Tour Program</option>
+          </select>
+        </div>
+  
+        <div  class="btn905">
+  
+          <button id="btn99"  style="padding: 13px;"  type="submit" class="custom-button">Book Now</button>
+  
+        </div>
+  
+          
+  
+      </div>
+      
+
+    </section>
+
+    <script src=
+"https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    </script>
+    <script>
+       document.querySelector(".custom-button").addEventListener('click', function () {
+    Swal.fire({
+        title: 'Nexus',
+        text: 'Booking Confirm!',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    });
+});
+
+document.querySelector("#btn99").addEventListener("click", function (e) {
+    e.preventDefault(); // prevent form submission
+
+    // Get values from the form inputs
+    let email = document.getElementById("email").value.trim();
+    let country = document.getElementById("country").value.trim();  // Country field with updated id
+    let selectedEvent = document.getElementById("event").value.trim();  // Event field with updated id
+
+    // Email validation rule
+    let emailRule = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    // Validation for empty fields
+    if (email === "" || country === "" || selectedEvent === "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Missing Information',
+            text: 'Please fill in all fields (Email, Country, and Event).'
+        });
+        return;
+    }
+
+    // Email validation
+    if (!emailRule.test(email)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Email',
+            text: 'Enter a valid email address.'
+        });
+        return;
+    }
+
+    // If all validations pass, show success alert
+    Swal.fire({
+        icon: 'success',
+        title: 'Booking Confirmed!',
+        text: `You have successfully booked the event: ${selectedEvent} from ${country}. A confirmation email will be sent to ${email}.`,
+        confirmButtonText: 'OK'
+    });
+});
+    </script>
+
+   
+  
+
+  <br> <br> <br> <br>
+
+
+     <!-- Footer -->
+     <footer class="footer">
+      <div class="footer-content">
+          <div class="footer-section">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./about.html">About Us</a></li>
+                  <li><a href="./contact.html">Contact</a></li>
+                  <li><a href="./booking.html">Booking</a></li>
+                  <li><a href="./event.html">Events</a></li>
+              </ul>
+          </div>
+          <div class="footer-section">
+              <h3>Contact Info</h3>
+              <p>Email: info@nexusaquarium.com</p>
+              <p>Phone: +1 234 567 890</p>
+              <p>Address: 123 Nexus Aquarium, City</p>
+          </div>
+          <div class="footer-section">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                  <a href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a>
+                  <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+              </div>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2024 Nexus Aquarium. All rights reserved.</p>
+      </div>
+  </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>

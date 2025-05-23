@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./Images/logo-png.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+
+
+
+    <header class="header">
+      <nav class="navbar">
+        <p  class="logo "><img style="border-radius: 1500px; cursor: pointer;" src="./Images/logo-png.png" alt="" width="70px" height="70px"><a style="color: white; font-size: 20px;" href="./index.html"><b> Nexus Aquarium</b> </a></p>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" id="hamburger-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+            <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </label>
+        <ul class="links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./event.html">Events</a></li>
+            <li><a href="./booking.html">Booking</a></li>
+            <li><a href="./feedback.html">Feedback</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+      
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                More
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a style="font-style: italic; font-weight: bolder; text-align: center;" class="dropdown-item text-black" href="./chart.html">Marine Life Chart</a></li>
+                <li><a style="font-style: italic; font-weight: bolder; text-align: center;" class="dropdown-item text-black" href="./pricing.html">Tickets</a></li>
+                <li><a style="font-style: italic; font-weight: bolder; text-align: center;"  class="dropdown-item text-black" href="./show.html">Dolphin Show</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a style="font-style: italic; font-weight: bolder; text-align: center;" class="dropdown-item text-black" href="./timing.html">Timing and Policy</a></li>
+              </ul>
+            </li>
+      
+            
+              <a style="font-size: 20px; font-weight: bolder; border: 1px solid grey; padding: 10px;" href="./signin.html" class="signin">Sign In</a>
+              <a style="font-size: 20px; font-weight: bolder; border: 1px solid grey; padding: 10px;" href="./signup.html" class="signup">Sign Up</a>
+          </ul>
+       
+      </nav>
+    </header>
+
+
+      <br>
+
+
+
+      <!-- Registration Form -->
+
+
+
+    <div class="signup">
+
+        <div class="registration-form">
+            <div class="form-header">
+                <h2>Create Your Account</h2>
+                <p>Sign up to get started!</p>
+            </div>
+            <form>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <div class="mb-3 form-check">
+                    <input style="border: 1px solid blue;" type="checkbox" class="form-check-input" id="terms" required>
+                    <label class="form-check-label" for="terms">
+  I agree to the 
+  <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#termsModal">terms and conditions</a>
+</label>
+                </div>
+                <button onclick="myfun()" type="submit" class="btn btn-custom w-100">Register</button>
+            </form>
+            <div class="text-muted">
+                Already have an account? <a href="./signin.html" class="text-primary">Sign In</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Terms and Conditions Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Welcome to Nexus Aquarium!</strong></p>
+        <p>By signing up, you agree to abide by our policies regarding booking, behavior, safety, and data usage.</p>
+        <ul>
+          <li>All bookings are non-refundable unless stated otherwise.</li>
+          <li>Children under 12 must be accompanied by an adult.</li>
+          <li>No outside food or beverages are allowed inside the premises.</li>
+          <li>Respect marine life. Do not tap on glass or feed animals unless guided.</li>
+          <li>Your information will be securely stored and never shared without consent.</li>
+        </ul>
+        <p>Please read our full <a href="./timing.html" target="_blank">Timing and Policy page</a> for details.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <br> <br> <br>
+
+
+<script>
+ document.querySelector(".btn-custom").addEventListener("click", function (e) {
+    e.preventDefault(); // prevent default form submission
+
+    let username = document.getElementById("username").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let confirmPassword = document.getElementById("confirm-password").value.trim();
+    let termsChecked = document.getElementById("terms").checked;
+
+    let emailRule = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    // Password validation: at least one special char, one uppercase, one lowercase, and one number
+    let passwordRule = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
+    // Validation for empty fields
+    if (username === "" || email === "" || password === "" || confirmPassword === "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Please fill in all fields.'
+        });
+        return;
+    }
+
+    // Email validation
+    if (!emailRule.test(email)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Email',
+            text: 'Enter a valid email address.'
+        });
+        return;
+    }
+
+    // Password validation
+    if (!passwordRule.test(password)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Weak Password',
+            text: 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.'
+        });
+        return;
+    }
+
+    // Password length check
+    if (password.length < 6) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Password Too Short',
+            text: 'Password must be at least 6 characters.'
+        });
+        return;
+    }
+
+    // Password match check
+    if (password !== confirmPassword) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Passwords Do Not Match',
+            text: 'The password and confirmation do not match.'
+        });
+        return;
+    }
+
+    // Terms and conditions checkbox validation
+    if (!termsChecked) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Terms and Conditions',
+            text: 'You must agree to the terms and conditions.'
+        });
+        return;
+    }
+
+    // If all validations pass
+    Swal.fire({
+        icon: 'success',
+        title: 'Registration Complete!',
+        text: 'Redirecting to sign-in page...',
+        timer: 2000,
+        showConfirmButton: false
+    }).then(() => {
+        window.location.href = "signin.html"; // redirect to signin page after successful registration
+    });
+});
+
+</script>
+
+   
+
+
+
+     <!-- Footer -->
+
+     
+     <!-- Footer -->
+     <footer class="footer">
+      <div class="footer-content">
+          <div class="footer-section">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./about.html">About Us</a></li>
+                  <li><a href="./contact.html">Contact</a></li>
+                  <li><a href="./booking.html">Booking</a></li>
+                  <li><a href="./event.html">Events</a></li>
+              </ul>
+          </div>
+          <div class="footer-section">
+              <h3>Contact Info</h3>
+              <p>Email: info@nexusaquarium.com</p>
+              <p>Phone: +1 234 567 890</p>
+              <p>Address: 123 Nexus Aquarium, City</p>
+          </div>
+          <div class="footer-section">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                  <a href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a>
+                  <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+              </div>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2024 Nexus Aquarium. All rights reserved.</p>
+      </div>
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
