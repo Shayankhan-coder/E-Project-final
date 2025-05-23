@@ -1,13 +1,12 @@
 body {
     height: auto;
     width: 100%;
-<<<<<<< HEAD
-    background-color: black;}
-=======
-/*     background-image: url('../Images/pexels-rachel-claire-6123093.jpg'); */
+    background-image: url('../Images/pexels-rachel-claire-6123093.jpg');
     background-repeat: no-repeat;
-    background-size: cover;}
->>>>>>> 2b6be29447e20e2575f2f82789562f8f84ce5e07
+    background-size: cover;
+}
+
+
   .header {
     
     top: 0;
